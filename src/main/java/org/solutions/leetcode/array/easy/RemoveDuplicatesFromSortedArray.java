@@ -1,6 +1,4 @@
-package org.solutions.leetcode;
-
-import java.sql.SQLOutput;
+package org.solutions.leetcode.array.easy;
 
 /**
  * @author Arti Harde

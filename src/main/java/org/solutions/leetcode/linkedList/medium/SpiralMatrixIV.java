@@ -1,7 +1,7 @@
 package org.solutions.leetcode.linkedList.medium;
 
 import org.solutions.leetcode.linkedList.ListNode;
-import org.solutions.leetcode.string.easy.PrintUtil;
+import org.solutions.leetcode.utils.PrintUtil;
 
 import java.util.Arrays;
 

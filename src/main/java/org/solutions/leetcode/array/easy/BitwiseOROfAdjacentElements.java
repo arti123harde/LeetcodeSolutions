@@ -1,7 +1,7 @@
 package org.solutions.leetcode.array.easy;
 
 
-import org.solutions.leetcode.string.easy.PrintUtil;
+import org.solutions.leetcode.utils.PrintUtil;
 
 /**
  * @author Arti Harde

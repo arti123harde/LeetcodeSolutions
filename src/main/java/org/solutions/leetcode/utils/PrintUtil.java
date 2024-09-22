@@ -1,4 +1,4 @@
-package org.solutions.leetcode.string.easy;
+package org.solutions.leetcode.utils;
 
 /**
  * @author Arti Harde

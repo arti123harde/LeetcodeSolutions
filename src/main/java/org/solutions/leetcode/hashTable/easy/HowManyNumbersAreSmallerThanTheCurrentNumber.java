@@ -1,6 +1,6 @@
 package org.solutions.leetcode.hashTable.easy;
 
-import org.solutions.leetcode.string.easy.PrintUtil;
+import org.solutions.leetcode.utils.PrintUtil;
 
 import java.util.HashMap;
 import java.util.Map;
