@@ -1,10 +1,10 @@
 package org.solutions.leetcode.linkedList.easy;
 
-import org.solutions.leetcode.linkedList.ListNode;
+import org.solutions.leetcode.common.ListNode;
 
 import java.util.Arrays;
 
-import static org.solutions.leetcode.linkedList.ListNode.createList;
+import static org.solutions.leetcode.common.ListNode.createList;
 
 /**
  * @author Arti Harde

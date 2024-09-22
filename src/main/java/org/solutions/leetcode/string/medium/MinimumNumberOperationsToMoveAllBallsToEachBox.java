@@ -1,6 +1,6 @@
 package org.solutions.leetcode.string.medium;
 
-import org.solutions.leetcode.utils.PrintUtil;
+import org.solutions.leetcode.common.PrintUtil;
 
 /**
  * @author Arti Harde

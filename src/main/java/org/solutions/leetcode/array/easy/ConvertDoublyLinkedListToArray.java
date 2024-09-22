@@ -1,6 +1,6 @@
 package org.solutions.leetcode.array.easy;
 
-import org.solutions.leetcode.utils.PrintUtil;
+import org.solutions.leetcode.common.PrintUtil;
 
 import java.util.ArrayList;
 import java.util.List;

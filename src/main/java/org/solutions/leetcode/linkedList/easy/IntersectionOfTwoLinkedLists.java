@@ -1,6 +1,6 @@
 package org.solutions.leetcode.linkedList.easy;
 
-import org.solutions.leetcode.linkedList.ListNode;
+import org.solutions.leetcode.common.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;
