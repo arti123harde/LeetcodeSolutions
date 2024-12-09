@@ -1,8 +1,8 @@
 package org.solutions.leetcode.string.medium;
 
-import java.util.ArrayList;
+import javafx.util.Pair;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,41 +30,27 @@ public class DesignUndergroundSystem {
 
     }
 
-    private Map<Integer, Map<String, Double>> customerTime = new HashMap<>();
-    private Map<String, Double> travelTime = new HashMap<>();
-    private Map<String, Double> noOfTrips = new HashMap<>();
+    Map<Integer, Pair<String, Integer>> checkIn = new HashMap<>();
+    Map<String, Pair<Double, Integer>> tripData = new HashMap<>();
 
     public void checkIn(int id, String stationName, int t) {
-        if(!customerTime.containsKey(id)){
-            customerTime.put(id, new HashMap<>());
-        }
-        customerTime.get(id).put(stationName, (double)t);
+        checkIn.put(id, new Pair<>(stationName, t));
     }
 
     public void checkOut(int id, String stationName, int t) {
-        if(!customerTime.containsKey(id)){
-            customerTime.put(id, new HashMap<>());
-        }
-        customerTime.get(id).put(stationName, (double)t);
-        List<String> s1 = new ArrayList<>(customerTime.get(id).keySet());
-        String key = getKey(s1.get(0), s1.get(1));
-        double currentTravelTime = Math.abs(customerTime.get(id).get(s1.get(1)) - customerTime.get(id).get(s1.get(0)));
-        noOfTrips.put(key, noOfTrips.getOrDefault(key, 0.0000) + 1);
-        if(!travelTime.containsKey(key)){
-            travelTime.put(key, currentTravelTime);
-        }else{
-            travelTime.put(key, travelTime.get(key) + currentTravelTime);
-        }
+        String tripKey = getTripKey(checkIn.get(id).getKey(), stationName);
+        if(!tripData.containsKey(tripKey)) tripData.put(tripKey, new Pair<>(0.0, 0));
+        tripData.put(tripKey, new Pair<>(tripData.get(tripKey).getKey() + (t - checkIn.get(id).getValue()),
+                tripData.get(tripKey).getValue() + 1));
+        checkIn.remove(id);
     }
 
     public double getAverageTime(String startStation, String endStation) {
-        String key = getKey(startStation, endStation);
-        double t = travelTime.get(key) / noOfTrips.get(key);
-        System.out.println("Key : " + key + " Time : " + t);
-        return t;
+        String tripKey = getTripKey(startStation, endStation);
+        return (double) tripData.get(tripKey).getKey() / tripData.get(tripKey).getValue();
     }
 
-    public String getKey(String s1, String s2){
-        return s1.compareTo(s2) > 0 ? s2 + "_" + s1 : s1 + "_" + s2 ;
+    public String getTripKey(String s1, String s2){
+        return s1 + "_" + s2;
     }
 }
