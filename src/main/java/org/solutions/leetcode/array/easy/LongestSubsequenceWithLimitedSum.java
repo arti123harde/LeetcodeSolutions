@@ -1,7 +1,5 @@
 package org.solutions.leetcode.array.easy;
 
-import org.camunda.feel.syntaxtree.In;
-
 import java.util.Arrays;
 
 /**
